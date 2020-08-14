@@ -1,16 +1,23 @@
-import { INPUT_CHANGE, INPUT_RESET } from "../constants/formConstants";
+import { createReducer } from "@reduxjs/toolkit";
+import { inputHandler, inputReset } from "../actions/formAction";
+export const items = createReducer("", {
+  [inputHandler]: (state, { payload }) => [...state, payload],
+  [inputReset]: (state, { payload }) => [...state, ""],
+});
 
-const initialState = "";
+// import { INPUT_CHANGE, INPUT_RESET } from "../constants/formConstants";
 
-export default (state = initialState, action) => {
-  switch (action.type) {
-    case INPUT_CHANGE:
-      return action.payload;
+// const initialState = "";
 
-    case INPUT_RESET:
-      return "";
+// export default (state = initialState, action) => {
+//   switch (action.type) {
+//     case INPUT_CHANGE:
+//       return action.payload;
 
-    default:
-      return state;
-  }
-};
+//     case INPUT_RESET:
+//       return "";
+
+//     default:
+//       return state;
+//   }
+// };
