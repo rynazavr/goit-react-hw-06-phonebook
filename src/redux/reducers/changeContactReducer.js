@@ -6,12 +6,10 @@ import {
   handleFilter,
 } from "../actions/changeContactAction";
 
-const removeContact = (state, { payload }) =>
-  state.filter((contact) => contact.id !== payload);
-
 export const items = createReducer([], {
   [addContact]: (state, { payload }) => [...state, payload],
-  [deleteContact]: removeContact,
+  [deleteContact]: (state, { payload }) =>
+    state.filter((contact) => contact.id !== payload),
   [contactStorage]: (state, { payload }) => payload,
 });
 
