@@ -22,16 +22,16 @@ const SingleContact = ({ name, number, deleteContact }) => {
   );
 };
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state, props) => {
   const contact = state.contacts.items.find(
-    (contact) => contact.id === ownProps.id
+    (contact) => contact.id === props.id
   );
 
   return { ...contact };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  deleteContact: () => dispatch(deleteContact(ownProps.id)),
+const mapDispatchToProps = (dispatch, props) => ({
+  deleteContact: () => dispatch(deleteContact(props.id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SingleContact);
