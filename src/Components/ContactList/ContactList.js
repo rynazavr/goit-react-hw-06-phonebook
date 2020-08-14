@@ -40,7 +40,7 @@ ContactList.propTypes = {
     PropTypes.shape({
       name: PropTypes.string,
       id: PropTypes.string,
-      namber: PropTypes.string,
+      number: PropTypes.string,
     })
   ).isRequired,
 };
