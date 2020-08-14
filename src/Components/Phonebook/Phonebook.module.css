@@ -1,0 +1,19 @@
+.appear {
+  transform: translateX(-100%);
+}
+.appearActive {
+  transform: translateX(0);
+  transition: all 260ms ease-in;
+}
+.blue {
+  color: blue;
+}
+.headersmall {
+  font-size: 16px;
+  color: rgb(92, 90, 90);
+}
+.warningstyle {
+  font-size: 14px;
+  color: rgb(255, 56, 56);
+  font-style: italic;
+}
